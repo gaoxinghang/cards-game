@@ -1,10 +1,10 @@
 import { Vec3 } from 'cc';
 
 export enum Suit {
-    Spade = '♠',
-    Heart = '♥',
-    Club = '♣',
-    Diamond = '♦',
+    Spade = '\u2660',
+    Heart = '\u2665',
+    Club = '\u2663',
+    Diamond = '\u2666',
 }
 
 export enum CardArea {
@@ -18,6 +18,8 @@ export interface CardData {
     rank: number;
     suit: Suit;
     area: CardArea;
+    stackId?: string;
+    stackIndex?: number;
     faceUp: boolean;
     selectable: boolean;
     position: Vec3;
