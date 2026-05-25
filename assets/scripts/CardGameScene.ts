@@ -12,6 +12,8 @@ interface LevelCardConfig {
     suit: Suit;
     area: CardArea;
     position: Vec3;
+    stackId?: string;
+    stackIndex?: number;
 }
 
 interface LevelConfig {
@@ -30,9 +32,9 @@ export class CardGameScene extends Component {
             title: '\u7b2c 1 \u5173',
             topCard: { id: 'level1-top-club-4', rank: 4, suit: Suit.Club, area: CardArea.Top, position: new Vec3(210, -690, 0) },
             tableCards: [
-                { id: 'level1-table-diamond-3', rank: 3, suit: Suit.Diamond, area: CardArea.Table, position: new Vec3(-260, 390, 0) },
-                { id: 'level1-table-spade-2', rank: 2, suit: Suit.Spade, area: CardArea.Table, position: new Vec3(0, 390, 0) },
-                { id: 'level1-table-heart-8', rank: 8, suit: Suit.Heart, area: CardArea.Table, position: new Vec3(260, 390, 0) },
+                { id: 'level1-table-spade-2', rank: 2, suit: Suit.Spade, area: CardArea.Table, position: new Vec3(-260, 470, 0), stackId: 'level1-left', stackIndex: 0 },
+                { id: 'level1-table-diamond-3', rank: 3, suit: Suit.Diamond, area: CardArea.Table, position: new Vec3(-260, 350, 0), stackId: 'level1-left', stackIndex: 1 },
+                { id: 'level1-table-heart-8', rank: 8, suit: Suit.Heart, area: CardArea.Table, position: new Vec3(180, 390, 0), stackId: 'level1-right', stackIndex: 0 },
             ],
             stockCards: [{ id: 'level1-stock-heart-7', rank: 7, suit: Suit.Heart, area: CardArea.Stock, position: new Vec3(-230, -690, 0) }],
         },
@@ -40,10 +42,10 @@ export class CardGameScene extends Component {
             title: '\u7b2c 2 \u5173',
             topCard: { id: 'level2-top-spade-6', rank: 6, suit: Suit.Spade, area: CardArea.Top, position: new Vec3(210, -690, 0) },
             tableCards: [
-                { id: 'level2-table-heart-5', rank: 5, suit: Suit.Heart, area: CardArea.Table, position: new Vec3(-330, 520, 0) },
-                { id: 'level2-table-club-4', rank: 4, suit: Suit.Club, area: CardArea.Table, position: new Vec3(-110, 520, 0) },
-                { id: 'level2-table-diamond-9', rank: 9, suit: Suit.Diamond, area: CardArea.Table, position: new Vec3(110, 520, 0) },
-                { id: 'level2-table-spade-10', rank: 10, suit: Suit.Spade, area: CardArea.Table, position: new Vec3(330, 520, 0) },
+                { id: 'level2-table-club-4', rank: 4, suit: Suit.Club, area: CardArea.Table, position: new Vec3(-330, 540, 0), stackId: 'level2-left', stackIndex: 0 },
+                { id: 'level2-table-heart-5', rank: 5, suit: Suit.Heart, area: CardArea.Table, position: new Vec3(-330, 420, 0), stackId: 'level2-left', stackIndex: 1 },
+                { id: 'level2-table-spade-10', rank: 10, suit: Suit.Spade, area: CardArea.Table, position: new Vec3(160, 540, 0), stackId: 'level2-right', stackIndex: 0 },
+                { id: 'level2-table-diamond-9', rank: 9, suit: Suit.Diamond, area: CardArea.Table, position: new Vec3(160, 420, 0), stackId: 'level2-right', stackIndex: 1 },
             ],
             stockCards: [{ id: 'level2-stock-heart-8', rank: 8, suit: Suit.Heart, area: CardArea.Stock, position: new Vec3(-230, -690, 0) }],
         },
@@ -51,12 +53,12 @@ export class CardGameScene extends Component {
             title: '\u7b2c 3 \u5173',
             topCard: { id: 'level3-top-diamond-7', rank: 7, suit: Suit.Diamond, area: CardArea.Top, position: new Vec3(210, -690, 0) },
             tableCards: [
-                { id: 'level3-table-spade-6', rank: 6, suit: Suit.Spade, area: CardArea.Table, position: new Vec3(-360, 600, 0) },
-                { id: 'level3-table-heart-5', rank: 5, suit: Suit.Heart, area: CardArea.Table, position: new Vec3(-120, 600, 0) },
-                { id: 'level3-table-club-4', rank: 4, suit: Suit.Club, area: CardArea.Table, position: new Vec3(120, 600, 0) },
-                { id: 'level3-table-diamond-10', rank: 10, suit: Suit.Diamond, area: CardArea.Table, position: new Vec3(-240, 330, 0) },
-                { id: 'level3-table-spade-11', rank: 11, suit: Suit.Spade, area: CardArea.Table, position: new Vec3(0, 330, 0) },
-                { id: 'level3-table-heart-12', rank: 12, suit: Suit.Heart, area: CardArea.Table, position: new Vec3(240, 330, 0) },
+                { id: 'level3-table-club-4', rank: 4, suit: Suit.Club, area: CardArea.Table, position: new Vec3(-360, 650, 0), stackId: 'level3-left', stackIndex: 0 },
+                { id: 'level3-table-heart-5', rank: 5, suit: Suit.Heart, area: CardArea.Table, position: new Vec3(-360, 530, 0), stackId: 'level3-left', stackIndex: 1 },
+                { id: 'level3-table-spade-6', rank: 6, suit: Suit.Spade, area: CardArea.Table, position: new Vec3(-360, 410, 0), stackId: 'level3-left', stackIndex: 2 },
+                { id: 'level3-table-heart-12', rank: 12, suit: Suit.Heart, area: CardArea.Table, position: new Vec3(160, 650, 0), stackId: 'level3-right', stackIndex: 0 },
+                { id: 'level3-table-spade-11', rank: 11, suit: Suit.Spade, area: CardArea.Table, position: new Vec3(160, 530, 0), stackId: 'level3-right', stackIndex: 1 },
+                { id: 'level3-table-diamond-10', rank: 10, suit: Suit.Diamond, area: CardArea.Table, position: new Vec3(160, 410, 0), stackId: 'level3-right', stackIndex: 2 },
             ],
             stockCards: [{ id: 'level3-stock-club-9', rank: 9, suit: Suit.Club, area: CardArea.Stock, position: new Vec3(-230, -690, 0) }],
         },
@@ -71,6 +73,7 @@ export class CardGameScene extends Component {
     private winLabel: Label | null = null;
     private levelLabel: Label | null = null;
     private currentLevelIndex = 0;
+    private topPileOrder: string[] = [];
     private readonly topPosition = new Vec3(210, -690, 0);
 
     protected onLoad(): void {
@@ -78,7 +81,7 @@ export class CardGameScene extends Component {
         this.createBackground();
         this.createUndoButton();
         this.createNextButton();
-        this.controller = new GameController(this.state, this.cardViews, this.topPosition, () => this.refreshControls());
+        this.controller = new GameController(this.state, this.cardViews, this.topPosition, () => this.handleStateChanged());
         this.loadLevel(0);
     }
 
@@ -128,7 +131,8 @@ export class CardGameScene extends Component {
         });
 
         this.state.topCardId = level.topCard.id;
-        this.refreshControls();
+        this.topPileOrder = [level.topCard.id];
+        this.handleStateChanged();
     }
 
     private clearCards(): void {
@@ -138,6 +142,7 @@ export class CardGameScene extends Component {
         this.state.history.splice(0);
         this.state.topCardId = '';
         this.state.inputLocked = false;
+        this.topPileOrder = [];
     }
 
     private makeCard(config: LevelCardConfig): CardData {
@@ -146,8 +151,10 @@ export class CardGameScene extends Component {
             rank: config.rank,
             suit: config.suit,
             area: config.area,
-            faceUp: true,
-            selectable: config.area !== CardArea.Top,
+            stackId: config.stackId,
+            stackIndex: config.stackIndex,
+            faceUp: config.area !== CardArea.Table || config.stackIndex === undefined,
+            selectable: config.area === CardArea.Stock,
             position: config.position.clone(),
             originalPosition: config.position.clone(),
         };
@@ -164,6 +171,8 @@ export class CardGameScene extends Component {
 
         if (card.area === CardArea.Top) {
             node.setSiblingIndex(998);
+        } else if (card.stackIndex !== undefined) {
+            node.setSiblingIndex(100 + card.stackIndex);
         }
     }
 
@@ -173,6 +182,78 @@ export class CardGameScene extends Component {
         }
 
         this.loadLevel(this.currentLevelIndex + 1);
+    }
+
+    private handleStateChanged(): void {
+        this.updateTableCoverage();
+        this.layoutTopPile();
+        this.refreshControls();
+    }
+
+    private updateTableCoverage(): void {
+        const stacks = new Map<string, CardData[]>();
+
+        this.state.cards.forEach((card) => {
+            if (card.area === CardArea.Stock) {
+                card.faceUp = true;
+                card.selectable = true;
+                this.cardViews.get(card.id)?.refresh();
+                return;
+            }
+
+            if (card.area !== CardArea.Table) {
+                return;
+            }
+
+            if (!card.stackId || card.stackIndex === undefined) {
+                card.faceUp = true;
+                card.selectable = true;
+                this.cardViews.get(card.id)?.refresh();
+                return;
+            }
+
+            const stack = stacks.get(card.stackId) || [];
+            stack.push(card);
+            stacks.set(card.stackId, stack);
+        });
+
+        stacks.forEach((stack) => {
+            const exposedIndex = Math.max(...stack.map((card) => card.stackIndex || 0));
+            stack.forEach((card) => {
+                const isExposed = card.stackIndex === exposedIndex;
+                card.faceUp = isExposed;
+                card.selectable = isExposed;
+                this.cardViews.get(card.id)?.refresh();
+            });
+        });
+    }
+
+    private layoutTopPile(): void {
+        this.topPileOrder = this.topPileOrder.filter((cardId) => this.state.getCard(cardId)?.area === CardArea.Top);
+        if (this.state.topCardId && this.topPileOrder[this.topPileOrder.length - 1] !== this.state.topCardId) {
+            this.topPileOrder = this.topPileOrder.filter((cardId) => cardId !== this.state.topCardId);
+            this.topPileOrder.push(this.state.topCardId);
+        }
+
+        const visibleTopCards = this.topPileOrder.slice(-4);
+        visibleTopCards.forEach((cardId, visibleIndex) => {
+            const card = this.state.getCard(cardId);
+            const view = this.cardViews.get(cardId);
+            if (!card || !view) {
+                return;
+            }
+
+            const isCurrentTop = card.id === this.state.topCardId;
+            const coveredOffset = visibleTopCards.length - visibleIndex - 1;
+            const targetPosition = isCurrentTop
+                ? this.topPosition.clone()
+                : new Vec3(this.topPosition.x - coveredOffset * 18, this.topPosition.y + coveredOffset * 12, 0);
+
+            card.faceUp = isCurrentTop;
+            card.selectable = false;
+            view.node.setSiblingIndex(980 + visibleIndex);
+            view.moveTo(targetPosition, isCurrentTop ? 0.08 : 0.12, () => view.refresh());
+        });
     }
 
     private refreshControls(): void {

@@ -18,6 +18,8 @@ export interface CardData {
     rank: number;
     suit: Suit;
     area: CardArea;
+    stackId?: string;
+    stackIndex?: number;
     faceUp: boolean;
     selectable: boolean;
     position: Vec3;
