@@ -42,7 +42,6 @@ export class CardGameScene extends Component {
             stockCards: [
                 { id: 'level1-stock-4', rank: 4, suit: Suit.Club, area: CardArea.Stock, position: new Vec3(-175, -720, 0), stackId: 'level1-stock', stackIndex: 0 },
                 { id: 'level1-stock-3', rank: 3, suit: Suit.Spade, area: CardArea.Stock, position: new Vec3(-305, -720, 0), stackId: 'level1-stock', stackIndex: 1 },
-                { id: 'level1-stock-1', rank: 1, suit: Suit.Heart, area: CardArea.Stock, position: new Vec3(-435, -720, 0), stackId: 'level1-stock', stackIndex: 2 },
             ],
         },
         {
